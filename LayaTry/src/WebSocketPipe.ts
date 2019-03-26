@@ -1,8 +1,11 @@
+
+
+
 export default class WebSocketPipe {
     private socket: Laya.Socket;
     private byte: Laya.Byte;
     constructor() {
-        
+
         this.byte = new Laya.Byte();
         //这里我们采用小端
         this.byte.endian = Laya.Byte.LITTLE_ENDIAN;
@@ -22,8 +25,10 @@ export default class WebSocketPipe {
         //正确建立连接；
     }
     private receiveHandler(msg: any = null): void {
+
         console.log(msg)
-        ///接收到数据触发函数
+       
+        //接收到数据触发函数
     }
     private closeHandler(e: any = null): void {
         //关闭事件
@@ -33,7 +38,11 @@ export default class WebSocketPipe {
         //连接出错
     }
 
-    public sendMsgToSocket(msg:String){
+    public sendMsgToSocket(msg: String) {
         this.socket.send(msg)
+    }
+
+    public sendBinaryToSocket(buffer: ArrayBuffer) {
+        this.socket.send(buffer)
     }
 }

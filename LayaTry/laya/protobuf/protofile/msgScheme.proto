@@ -1,0 +1,49 @@
+syntax = "proto3";
+option java_package = "msgScheme";
+package msgScheme;
+message AMsg {
+    enum Head {
+        Undefined_Msg = 0;
+        Undefined_Request = 1;
+        Undefined_Response = 2;
+        Login_Request = 100001;
+        Login_Response = 100002;
+
+        CreateRoom_Request = 100003;
+        CreateRoom_Response = 100004;
+    }
+    Head head = 1;
+
+    oneof body {
+        LoginRequest loginRequest = 2;
+        LoginResponse loginResponse = 3;
+        UndefinedMsg undefinedMsg = 4;
+        UndefinedRequest undefinedRequest = 5;
+        UndefinedResponse undefinedResponse = 6;
+    }
+
+}
+//0
+message UndefinedMsg {
+
+}
+//1
+message UndefinedRequest {
+
+}
+//2
+message UndefinedResponse {
+
+}
+
+//100001
+message LoginRequest {
+    string userId = 1;
+    string password = 2;
+
+}
+//100002
+message LoginResponse {
+    bool ok = 1;
+
+}

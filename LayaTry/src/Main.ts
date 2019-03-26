@@ -36,7 +36,7 @@ class Main {
 //激活启动类
 new Main();
 
-export default class MainWebSocketPipe {
+export default class StandardObj {
 
 	public static TheWebSocketPipe:WebSocketPipe = new WebSocketPipe()
 	

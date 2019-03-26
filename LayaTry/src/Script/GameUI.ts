@@ -1,7 +1,10 @@
 
 import { ui } from "./../ui/layaMaxUI";
 
-import MainWebSocketPipe from "../Main";
+import StandardObj from "../Main";
+
+
+
 
 export default class GameUI extends ui.test.startUI {
 
@@ -13,14 +16,19 @@ export default class GameUI extends ui.test.startUI {
     }
 
 
-    onClickDo(e:Laya.Event):void {
-        
-        MainWebSocketPipe.TheWebSocketPipe.sendMsgToSocket(this.TextInput.text)
+    onClickDo(e: Laya.Event): void {
+
+        StandardObj.TheWebSocketPipe.sendMsgToSocket(this.TextInput.text)
+        const msg = msgScheme.AMsg.create({ head: msgScheme.AMsg.Head.Login_Request,
+             loginRequest: {userId:"aaa",
+                            password:"bbb"} })
+        console.log(msg)
 
     }
-    onEnable():void {
+    onEnable(): void {
         this.sendButton.on(Laya.Event.CLICK, this, this.onClickDo);
         console.log("按鈕ok")
+        
     }
 
 }

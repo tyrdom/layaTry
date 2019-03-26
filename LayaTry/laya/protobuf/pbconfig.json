@@ -1,0 +1,16 @@
+{
+	"options": {
+            "no-create": false,//不生成用于反射兼容性的create函数。
+            "no-verify": false,//不生成验证函数。
+            "no-convert": true,//不生成解码函数。
+            "no-delimited": true,//不生成带分隔符的编码/解码函数。
+            "no-encode":false,//没有生成像from/toObject这样的转换函数吗
+            "no-decode":false//不生成编码函数。
+	},
+	
+	"outputFileType":0,//导出文件类型 0 全部（js和.min.js）1(js) 2(.min.js)
+	"dtsOutDir":"./",//定义文件输出目录
+	"sourceRoot": "./protofile",//proto文件目录
+	"outFileName":"",//输出文件名
+	"outputDir":"./out"//输出文件夹
+}
