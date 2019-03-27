@@ -2,10 +2,11 @@
     "x":0,
     "type":"Scene",
     "selectedBox":2,
+    "selecteID":11,
     "searchKey":"Scene",
     "props":{"width":640,"sceneColor":"#000000","runtime":"Script/GameUI.ts","height":1136},
     "nodeParent":-1,
-    "maxID":11,
+    "maxID":12,
     "label":"Scene",
     "isOpen":true,
     "isDirectory":true,
@@ -16,10 +17,10 @@
         {
             "x":15,
             "type":"Button",
-            "searchKey":"Button,sendButton,sendButton",
-            "props":{"y":622,"x":216,"var":"sendButton","skin":"comp/button.png","name":"sendButton","label":"send"},
+            "searchKey":"Button,SendButton,SendButton",
+            "props":{"y":30,"x":163,"var":"SendButton","skin":"comp/button.png","name":"SendButton","label":"send"},
             "nodeParent":2,
-            "label":"sendButton",
+            "label":"SendButton",
             "isOpen":true,
             "isDirectory":true,
             "isAniNode":true,
@@ -41,6 +42,20 @@
                     "child":[
                         ]
                 }]
+        },
+        {
+            "x":15,
+            "type":"Text",
+            "searchKey":"Text,ShowText,ShowText",
+            "props":{"y":61,"x":19,"width":220,"var":"ShowText","name":"ShowText","height":49,"fontSize":30,"color":"#548e45"},
+            "nodeParent":2,
+            "label":"ShowText",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":11,
+            "child":[
+                ]
         }],
     "animations":[
         {

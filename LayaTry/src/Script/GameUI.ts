@@ -23,19 +23,19 @@ export default class GameUI extends ui.test.startUI {
         let msg = msgScheme.AMsg.create({
             head: msgScheme.AMsg.Head.Login_Request,
             loginRequest: {
-                userId: "aaa",
+                userId: this.TextInput.text,
                 password: "bbb"
             }
         })
         console.log(msg)
         let buffer = msgScheme.AMsg.encode(msg).finish()
-        console.log(buffer)
+        console.log("Buffer:"+buffer)
         StandardObj.TheWebSocketPipe.sendBinaryToSocket(buffer)
-        // let decoded = msgScheme.AMsg.decode(buffer()).
-        // console.log(decoded)
+         let aHead = msgScheme.AMsg.decode(buffer).head
+         console.log("decode:"+aHead)
     }
     onEnable(): void {
-        this.sendButton.on(Laya.Event.CLICK, this, this.onClickDo);
+        this.SendButton.on(Laya.Event.CLICK, this, this.onClickDo);
         console.log("按鈕ok")
 
     }

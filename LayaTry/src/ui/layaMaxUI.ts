@@ -5,8 +5,9 @@ import Scene=Laya.Scene;
 var REG: Function = Laya.ClassUtils.regClass;
 export module ui.test {
     export class startUI extends Laya.Scene {
-		public sendButton:Laya.Button;
+		public SendButton:Laya.Button;
 		public TextInput:Laya.TextInput;
+		public ShowText:laya.display.Text;
         constructor(){ super()}
         createChildren():void {
             super.createChildren();

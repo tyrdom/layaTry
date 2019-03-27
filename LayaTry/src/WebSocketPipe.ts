@@ -1,9 +1,11 @@
+import { Reader, BufferReader } from "../protobuf/library/protobuf-library";
 
 
 
 export default class WebSocketPipe {
     private socket: Laya.Socket;
     private byte: Laya.Byte;
+    
     constructor() {
 
         this.byte = new Laya.Byte();
@@ -24,10 +26,24 @@ export default class WebSocketPipe {
         console.log("连接成功")
         //正确建立连接；
     }
-    private receiveHandler(msg: any = null): void {
-
+    private receiveHandler(msg): void {
+        
         console.log(msg)
-       
+        this.byte.clear()
+        this.byte.writeArrayBuffer(msg)
+        this.byte.pos=0
+        let aMsg = msgScheme.AMsg.decode(this.byte.readUint8Array(0,100000))
+        console.log(aMsg)
+        // let head = msgScheme.AMsg.decode(msg.buffer).head
+        // console.log(head)
+
+       // let buffer = new BufferReader(msg)
+        
+        // const aHead = aMsg.head
+        // if (aHead == msgScheme.AMsg.Head.Login_Response) { 
+        //        console.log("=====服务器回复登录结果：====="+ aMsg.loginResponse.ok+"==========")
+        // }
+
         //接收到数据触发函数
     }
     private closeHandler(e: any = null): void {
